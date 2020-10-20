@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"jsx": "preserve",
+		"moduleResolution": "node",
+		"removeComments": true,
+		"skipLibCheck": true,
+		"strict": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["src/**/*.test.(ts|tsx)", "src/**/__fixtures__"]
+}
