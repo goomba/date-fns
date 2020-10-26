@@ -1,9 +1,9 @@
-import { getTimestamp } from "./src";
+import { format } from "./src";
 
 const date = "2020-10-20T04:10:00Z";
 const baseDate = "2020-10-19T00:08:29Z";
 
-const result = getTimestamp({
+const result = format({
 	date,
 	baseDate,
 	format: "d 'days', s 'seconds,' h 'hours'",
