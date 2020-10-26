@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
+		"build": "yarn clean && tsc -p tsconfig.cjs.json && tsc -p tsconfig.esm.json",
 		"checkTypes": "tsc --noEmit -p tsconfig.cjs.json && tsc --noEmit -p tsconfig.esm.json",
 		"clean": "rm -rf lib",
 		"lint": "eslint .",
