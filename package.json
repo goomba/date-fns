@@ -1,7 +1,9 @@
 {
 	"name": "@goomba/date-fns",
 	"version": "0.0.0",
-	"main": "lib/index.js",
+	"main": "lib/cjs/index.js",
+	"module": "lib/esm/index.js",
+	"types": "lib/esm/index.d.ts",
 	"repository": "git@github.com:goomba/date-fns.git",
 	"author": "Michael Yuen <iam@mikey.baby>",
 	"license": "MIT",

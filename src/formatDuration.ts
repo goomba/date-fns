@@ -37,9 +37,27 @@ export function formatDuration(
 	duration: Duration,
 	format: string
 ): null | string {
+	/**
+	 * Probably replace with implementation similar to date-fns.
+	 * `requiredArgs`
+	 */
+	if (!duration) {
+		throw new Error("Parameter `duration` is required");
+	}
+
+	if (!format) {
+		throw new Error("Parameter `format` is required");
+	}
+
 	const milliseconds = durationToMilliseconds(duration);
 	const tokenMatches = format.match(durationTokensRegExp);
 
+	/**
+	 * Should this:
+	 * - throw
+	 * - return null
+	 * - be removed and just return like date-fns/format does?
+	 */
 	if (!tokenMatches) {
 		console.error("NO TOKEN MATCHES");
 		return null;

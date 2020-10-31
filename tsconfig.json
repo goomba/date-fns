@@ -9,6 +9,6 @@
 		"skipLibCheck": true,
 		"strict": true
 	},
-	"include": ["test.ts", "src/**/*"],
+	"include": ["src/**/*"],
 	"exclude": ["src/**/*.test.(ts|tsx)", "src/**/__fixtures__"]
 }

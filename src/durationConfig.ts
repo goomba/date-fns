@@ -11,6 +11,10 @@ type DurationConfig = {
 	};
 };
 
+/**
+ * TODO: currently these are inaccessible to users because this file is not exposed.
+ * Well, they could probably import the file itself but that is lame.
+ */
 export const MILLISECOND = 1;
 export const SECOND = MILLISECOND * 1000;
 export const MINUTE = SECOND * 60;
