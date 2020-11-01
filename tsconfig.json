@@ -10,5 +10,5 @@
 		"strict": true
 	},
 	"include": ["src/**/*"],
-	"exclude": ["src/**/*.test.(ts|tsx)", "src/**/__fixtures__"]
+	"exclude": ["src/**/test.ts"]
 }

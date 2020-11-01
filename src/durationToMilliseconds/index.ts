@@ -1,5 +1,5 @@
-import { durationConfig } from "./durationConfig";
-import { Duration } from "./types";
+import { durationConfig } from "../durationConfig";
+import { Duration } from "../types";
 
 export function durationToMilliseconds(duration: Duration): number {
 	return Object.keys(durationConfig).reduce(

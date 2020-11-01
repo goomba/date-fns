@@ -1,4 +1,4 @@
-import { DurationQuantityMap } from "./formatDuration";
+import { DurationQuantityMap } from "../formatDuration";
 
 export type SupportedTokens = "y" | "M" | "w" | "d" | "h" | "m" | "s";
 

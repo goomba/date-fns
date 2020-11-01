@@ -1,7 +1,7 @@
-import { addLeadingZeros } from "./addLeadingZeros";
-import { durationConfig, SupportedTokens } from "./durationConfig";
-import { durationToMilliseconds } from "./durationToMilliseconds";
-import { Duration } from "./types";
+import { addLeadingZeros } from "../addLeadingZeros";
+import { durationConfig, SupportedTokens } from "../durationConfig";
+import { durationToMilliseconds } from "../durationToMilliseconds";
+import { Duration } from "../types";
 
 export type DurationQuantityMap = {
 	[key: string]: number | undefined;
@@ -41,25 +41,20 @@ export function formatDuration(
 	 * Probably replace with implementation similar to date-fns.
 	 * `requiredArgs`
 	 */
+	// This should also check if duration is valid, if we can
 	if (!duration) {
-		throw new Error("Parameter `duration` is required");
+		throw new Error("Parameter `duration` is required.");
 	}
 
 	if (!format) {
-		throw new Error("Parameter `format` is required");
+		throw new Error("Parameter `format` is required.");
 	}
 
 	const milliseconds = durationToMilliseconds(duration);
 	const tokenMatches = format.match(durationTokensRegExp);
 
-	/**
-	 * Should this:
-	 * - throw
-	 * - return null
-	 * - be removed and just return like date-fns/format does?
-	 */
 	if (!tokenMatches) {
-		console.error("NO TOKEN MATCHES");
+		console.warn("No token matches found.");
 		return null;
 	}
 
@@ -105,9 +100,7 @@ export function formatDuration(
 
 			if (firstCharacter.match(unescapedLatinCharacterRegExp)) {
 				throw new RangeError(
-					"Format string contains an unescaped latin alphabet character `" +
-						firstCharacter +
-						"`"
+					`Format string contains an unescaped latin alphabet character \`${firstCharacter}\`.`
 				);
 			}
 
