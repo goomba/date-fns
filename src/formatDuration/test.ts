@@ -213,15 +213,15 @@ describe("formatDuration", () => {
 	describe("invalid usage", () => {
 		test("no parameters throws error", () => {
 			// @ts-expect-error no parameters
-			expect(() => formatDuration()).toThrow(
-				"Parameter `duration` is required."
+			expect(() => formatDuration()).toThrowError(
+				new TypeError("Parameter `duration` is required.")
 			);
 		});
 
 		test("no format parameter throws error", () => {
 			// @ts-expect-error no format parameter
-			expect(() => formatDuration({ hours: 3 })).toThrow(
-				"Parameter `format` is required."
+			expect(() => formatDuration({ hours: 3 })).toThrowError(
+				new TypeError("Parameter `format` is required.")
 			);
 		});
 

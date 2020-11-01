@@ -105,3 +105,11 @@ formatDuration(duration, format);
 | Type   | Type                          |
 | ------ | ----------------------------- |
 | String | the formatted duration string |
+
+#### Exceptions
+
+| Type       | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| TypeError  | Parameter `duration` is required.                            |
+| TypeError  | Parameter `duration` is required.                            |
+| RangeError | format string contains an unescaped latin alphabet character |
