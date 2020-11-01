@@ -111,5 +111,5 @@ formatDuration(duration, format);
 | Type       | Description                                                  |
 | ---------- | ------------------------------------------------------------ |
 | TypeError  | Parameter `duration` is required.                            |
-| TypeError  | Parameter `duration` is required.                            |
+| TypeError  | Parameter `format` is required.                              |
 | RangeError | format string contains an unescaped latin alphabet character |
