@@ -15,6 +15,7 @@
 		"checkTypes": "tsc --noEmit -p tsconfig.cjs.json && tsc --noEmit -p tsconfig.esm.json",
 		"clean": "rm -rf lib",
 		"lint": "eslint .",
+		"prepublishOnly": "yarn build",
 		"prettier": "prettier --write .",
 		"start": "ts-node app.ts",
 		"test": "jest",
