@@ -6,7 +6,10 @@
 	"main": "lib/cjs/index.js",
 	"module": "lib/esm/index.js",
 	"types": "lib/esm/index.d.ts",
-	"repository": "git@github.com:goomba/date-fns.git",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/goomba/date-fns.git"
+	},
 	"author": "Michael Yuen <iam@mikey.baby>",
 	"license": "MIT",
 	"private": false,
@@ -67,5 +70,12 @@
 		"utilities",
 		"utility-library",
 		"utility"
-	]
+	],
+	"bugs": {
+		"url": "https://github.com/goomba/date-fns/issues"
+	},
+	"homepage": "https://github.com/goomba/date-fns#readme",
+	"directories": {
+		"lib": "lib"
+	}
 }
