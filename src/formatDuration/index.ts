@@ -1,7 +1,7 @@
 import { addLeadingZeros } from "../addLeadingZeros";
 import { durationConfig, SupportedTokens } from "../durationConfig";
 import { durationToMilliseconds } from "../durationToMilliseconds";
-import { Duration } from "../types";
+import { DurationWithIndex } from "../types";
 
 export type DurationQuantityMap = {
 	[key: string]: number | undefined;
@@ -34,7 +34,7 @@ const doubleQuoteRegExp = /''/g;
 const unescapedLatinCharacterRegExp = /[a-zA-Z]/;
 
 export function formatDuration(
-	duration: Duration,
+	duration: DurationWithIndex,
 	format: string
 ): null | string {
 	/**

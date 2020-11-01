@@ -1,5 +1,5 @@
 import { intervalToDuration } from "date-fns";
-import { Duration } from "../types";
+import { DurationWithIndex } from "../types";
 import { formatDuration } from ".";
 
 describe("formatDuration", () => {
@@ -12,14 +12,17 @@ describe("formatDuration", () => {
 				end: new Date(baseDate),
 			};
 			const duration = intervalToDuration(options);
-			expect(formatDuration(duration as Duration, "s 'seconds'")).toBe(
+			expect(formatDuration(duration as DurationWithIndex, "s 'seconds'")).toBe(
 				"26 seconds"
 			);
-			expect(formatDuration(duration as Duration, "s 'seconds ago'")).toBe(
-				"26 seconds ago"
-			);
 			expect(
-				formatDuration(duration as Duration, "m 'minutes,' s 'seconds ago'")
+				formatDuration(duration as DurationWithIndex, "s 'seconds ago'")
+			).toBe("26 seconds ago");
+			expect(
+				formatDuration(
+					duration as DurationWithIndex,
+					"m 'minutes,' s 'seconds ago'"
+				)
 			).toBe("0 minutes, 26 seconds ago");
 		});
 	});
@@ -33,14 +36,17 @@ describe("formatDuration", () => {
 				end: new Date(baseDate),
 			};
 			const duration = intervalToDuration(options);
-			expect(formatDuration(duration as Duration, "m 'minutes'")).toBe(
+			expect(formatDuration(duration as DurationWithIndex, "m 'minutes'")).toBe(
 				"7 minutes"
 			);
-			expect(formatDuration(duration as Duration, "m 'min ago'")).toBe(
+			expect(formatDuration(duration as DurationWithIndex, "m 'min ago'")).toBe(
 				"7 min ago"
 			);
 			expect(
-				formatDuration(duration as Duration, "m 'minutes,' s 'seconds ago'")
+				formatDuration(
+					duration as DurationWithIndex,
+					"m 'minutes,' s 'seconds ago'"
+				)
 			).toBe("7 minutes, 26 seconds ago");
 		});
 	});
@@ -54,13 +60,15 @@ describe("formatDuration", () => {
 				end: new Date(baseDate),
 			};
 			const duration = intervalToDuration(options);
-			expect(formatDuration(duration as Duration, "h 'hour'")).toBe("1 hour");
-			expect(formatDuration(duration as Duration, "h 'hr ago'")).toBe(
+			expect(formatDuration(duration as DurationWithIndex, "h 'hour'")).toBe(
+				"1 hour"
+			);
+			expect(formatDuration(duration as DurationWithIndex, "h 'hr ago'")).toBe(
 				"1 hr ago"
 			);
 			expect(
 				formatDuration(
-					duration as Duration,
+					duration as DurationWithIndex,
 					"h 'hour(s)' m 'minutes' s 'seconds'"
 				)
 			).toBe("1 hour(s) 7 minutes 26 seconds");
@@ -76,13 +84,15 @@ describe("formatDuration", () => {
 				end: new Date(baseDate),
 			};
 			const duration = intervalToDuration(options);
-			expect(formatDuration(duration as Duration, "d 'days'")).toBe("3 days");
-			expect(formatDuration(duration as Duration, "d 'days ago'")).toBe(
-				"3 days ago"
+			expect(formatDuration(duration as DurationWithIndex, "d 'days'")).toBe(
+				"3 days"
 			);
 			expect(
+				formatDuration(duration as DurationWithIndex, "d 'days ago'")
+			).toBe("3 days ago");
+			expect(
 				formatDuration(
-					duration as Duration,
+					duration as DurationWithIndex,
 					"d 'days' h 'hour(s)' m 'minutes' ss 'seconds'"
 				)
 			).toBe("3 days 13 hour(s) 33 minutes 02 seconds");
@@ -98,15 +108,15 @@ describe("formatDuration", () => {
 				end: new Date(baseDate),
 			};
 			const duration = intervalToDuration(options);
-			expect(formatDuration(duration as Duration, "M 'months'")).toBe(
+			expect(formatDuration(duration as DurationWithIndex, "M 'months'")).toBe(
 				"4 months"
 			);
-			expect(formatDuration(duration as Duration, "M 'months ago'")).toBe(
-				"4 months ago"
-			);
+			expect(
+				formatDuration(duration as DurationWithIndex, "M 'months ago'")
+			).toBe("4 months ago");
 			expect(
 				formatDuration(
-					duration as Duration,
+					duration as DurationWithIndex,
 					"M 'months' d 'days' h 'hour(s)' m 'minutes' s 'seconds'"
 				)
 			).toBe("4 months 20 days 8 hour(s) 45 minutes 55 seconds");
@@ -122,15 +132,15 @@ describe("formatDuration", () => {
 				end: new Date(baseDate),
 			};
 			const duration = intervalToDuration(options);
-			expect(formatDuration(duration as Duration, "y 'years'")).toBe(
+			expect(formatDuration(duration as DurationWithIndex, "y 'years'")).toBe(
 				"19 years"
 			);
-			expect(formatDuration(duration as Duration, "y 'years ago'")).toBe(
-				"19 years ago"
-			);
+			expect(
+				formatDuration(duration as DurationWithIndex, "y 'years ago'")
+			).toBe("19 years ago");
 			expect(
 				formatDuration(
-					duration as Duration,
+					duration as DurationWithIndex,
 					"y 'years' M 'months' d 'days' h 'hour(s)' m 'minutes' s 'seconds'"
 				)
 			).toBe("19 years 4 months 20 days 8 hour(s) 45 minutes 55 seconds");
@@ -149,7 +159,7 @@ describe("formatDuration", () => {
 			const duration = intervalToDuration(options);
 			expect(
 				formatDuration(
-					duration as Duration,
+					duration as DurationWithIndex,
 					"hh 'hours' mmm 'minutes' ss 'seconds'"
 				)
 			).toBe("06 hours 005 minutes 03 seconds");
@@ -165,7 +175,7 @@ describe("formatDuration", () => {
 			const duration = intervalToDuration(options);
 			expect(
 				formatDuration(
-					duration as Duration,
+					duration as DurationWithIndex,
 					"hh 'hours' mm 'minutes' ss 'seconds'"
 				)
 			).toBe("14 hours 20 minutes 11 seconds");
@@ -181,7 +191,7 @@ describe("formatDuration", () => {
 				end: new Date(baseDate),
 			};
 			const duration = intervalToDuration(options);
-			expect(formatDuration(duration as Duration, "m 'minutes'")).toBe(
+			expect(formatDuration(duration as DurationWithIndex, "m 'minutes'")).toBe(
 				"90 minutes"
 			);
 		});
@@ -194,9 +204,9 @@ describe("formatDuration", () => {
 				end: new Date(baseDate),
 			};
 			const duration = intervalToDuration(options);
-			expect(formatDuration(duration as Duration, "h 'hour' m 'minutes'")).toBe(
-				"1 hour 30 minutes"
-			);
+			expect(
+				formatDuration(duration as DurationWithIndex, "h 'hour' m 'minutes'")
+			).toBe("1 hour 30 minutes");
 		});
 	});
 
@@ -209,29 +219,14 @@ describe("formatDuration", () => {
 		});
 
 		test("no format parameter throws error", () => {
-			const date = "2001-07-26T00:00:00Z";
-			const baseDate = "2020-12-16T09:45:55Z";
-			const options = {
-				start: new Date(date),
-				end: new Date(baseDate),
-			};
-			const duration = intervalToDuration(options);
 			// @ts-expect-error no format parameter
-			expect(() => formatDuration(duration)).toThrow(
+			expect(() => formatDuration({ hours: 3 })).toThrow(
 				"Parameter `format` is required."
 			);
 		});
 
 		test("malformed format throws error", () => {
-			const date = "2001-07-26T00:00:00Z";
-			const baseDate = "2020-12-16T09:45:55Z";
-			const options = {
-				start: new Date(date),
-				end: new Date(baseDate),
-			};
-			const duration = intervalToDuration(options);
-			// @ts-expect-error no format parameter
-			expect(() => formatDuration(duration, "h hours")).toThrowError(
+			expect(() => formatDuration({ minutes: 10 }, "h hours")).toThrowError(
 				new RangeError(
 					"Format string contains an unescaped latin alphabet character `o`."
 				)

@@ -1,7 +1,7 @@
 import { durationConfig } from "../durationConfig";
-import { Duration } from "../types";
+import { DurationWithIndex } from "../types";
 
-export function durationToMilliseconds(duration: Duration): number {
+export function durationToMilliseconds(duration: DurationWithIndex): number {
 	return Object.keys(durationConfig).reduce(
 		(milliseconds, durationConfigProperty) => {
 			const { key, ms } = durationConfig[durationConfigProperty];
