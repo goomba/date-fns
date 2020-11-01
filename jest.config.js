@@ -1,19 +1,13 @@
 module.exports = {
-	collectCoverageFrom: [
-		"**/*.(ts|tsx)",
-		"!src/index.ts",
-		"!**/__fixtures__/**",
-	],
+	collectCoverageFrom: ["src/**/*.ts", "!src/index.ts"],
 	globals: {
 		"ts-jest": {
-			tsConfig: "tsconfig.cjs.json",
 			compiler: "typescript",
+			tsconfig: "tsconfig.cjs.json",
 		},
 	},
-	roots: ["<rootDir>/src"],
 	setupFilesAfterEnv: ["./jest.setup.js"],
-	testMatch: ["**/*.test.(ts|tsx)"],
 	transform: {
-		"^.+\\.(ts|tsx)$": "ts-jest",
+		"^.+\\.ts$": "ts-jest",
 	},
 };

@@ -4,6 +4,3 @@
 coverage
 lib
 /node_modules
-
-# Remove later
-test.ts
