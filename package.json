@@ -10,6 +10,9 @@
 		"type": "git",
 		"url": "git+ssh://git@github.com/goomba/date-fns.git"
 	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
+	},
 	"author": "Michael Yuen <iam@mikey.baby>",
 	"license": "MIT",
 	"private": false,
