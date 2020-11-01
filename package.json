@@ -1,6 +1,8 @@
 {
 	"name": "@goomba/date-fns",
 	"version": "0.0.0",
+	"sideEffects": false,
+	"description": "Custom formatting for date-fns Durations",
 	"main": "lib/cjs/index.js",
 	"module": "lib/esm/index.js",
 	"types": "lib/esm/index.d.ts",
@@ -17,6 +19,9 @@
 		"start": "ts-node app.ts",
 		"test": "jest",
 		"test:coverage": "jest --coverage"
+	},
+	"peerDependencies": {
+		"date-fns": ">=2.0.0-alpha.1"
 	},
 	"devDependencies": {
 		"@types/jest": "^26.0.15",
@@ -48,5 +53,18 @@
 			"jest --findRelatedTests"
 		],
 		"*.{json,md}": "prettier --write"
-	}
+	},
+	"keywords": [
+		"date-fns",
+		"date",
+		"duration-format",
+		"duration",
+		"format-duration",
+		"javascript",
+		"modules",
+		"nodejs",
+		"utilities",
+		"utility-library",
+		"utility"
+	]
 }

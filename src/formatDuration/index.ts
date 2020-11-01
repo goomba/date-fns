@@ -43,11 +43,11 @@ export function formatDuration(
 	 */
 	// This should also check if duration is valid, if we can
 	if (!duration) {
-		throw new Error("Parameter `duration` is required.");
+		throw new TypeError("Parameter `duration` is required.");
 	}
 
 	if (!format) {
-		throw new Error("Parameter `format` is required.");
+		throw new TypeError("Parameter `format` is required.");
 	}
 
 	const milliseconds = durationToMilliseconds(duration);
