@@ -82,6 +82,7 @@ formatDuration(duration, "s 'seconds'");
 ```
 
 **Note**
+
 At this time, the larger parts of unused Duration will be added to the _next_ largest token specified.
 
 - Smaller parts are left out. In other words, similar to rounding down. Open an issue if you are interested in rounding up in some manner.
