@@ -17,7 +17,7 @@ yarn add @goomba/date-fns
 ```
 import { formatDuration } from '@goomba/date-fns'
 
-formatDuration({ days: 3 }, "d 'days ago");
+formatDuration({ days: 3 }, "d 'days ago'");
 //=> "3 days ago"
 ```
 
@@ -84,7 +84,7 @@ formatDuration(duration, "s 'seconds'");
 **Note**
 At this time, the larger parts of unused Duration will be added to the _next_ largest token specified.
 
-- Smaller parts are left out. In other words, similar to rounding down. Open an issue if you are interested in this feature.
+- Smaller parts are left out. In other words, similar to rounding down. Open an issue if you are interested in rounding up in some manner.
 - Currently dynamic calculation can not be disabled. Open an issue if you are interested in this feature.
 
 #### Syntax
