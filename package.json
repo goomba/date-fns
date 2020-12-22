@@ -1,6 +1,6 @@
 {
 	"name": "@goomba/date-fns",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"sideEffects": false,
 	"description": "Custom formatting for date-fns Durations",
 	"main": "lib/cjs/index.js",
