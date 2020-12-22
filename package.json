@@ -11,7 +11,7 @@
 		"url": "git+ssh://git@github.com/goomba/date-fns.git"
 	},
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
+		"registry": "https://registry.npmjs.org"
 	},
 	"author": "Michael Yuen <iam@mikey.baby>",
 	"license": "MIT",
